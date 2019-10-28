@@ -1,0 +1,210 @@
+main {
+    flex-direction: column;
+    align-items: center;
+
+    section.omdb-app__list--area {
+        padding: 70px 50px;
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+
+        .result-items-area {
+            width: 600px;
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            margin: auto;
+
+            .search-result-area {
+                display: flex;
+                align-items: center;
+                align-self: center;
+                width: 100%;
+                border-bottom: solid 1px #5883ff;
+                justify-content: space-between;
+                height: 50px;
+
+                .search-key-count-key-area {
+                    width: auto;
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+
+                    .search-count {
+                        font-family: Maax;
+                        font-size: 14px;
+                        font-weight: normal;
+                        font-stretch: normal;
+                        font-style: normal;
+                        letter-spacing: normal;
+                        text-align: left;
+                        color: #9b9b9b;
+                    }
+
+                    h1 {
+                        font-family: Maax;
+                        font-size: 15px;
+                        font-weight: normal;
+                        font-stretch: normal;
+                        font-style: normal;
+                        letter-spacing: normal;
+                        text-align: left;
+                        color: #5883ff;
+                        margin-right: 10px;
+                        margin-bottom: 0;
+                    }
+                }
+
+                .search-result-close-area {
+                    img {
+                        width: 24.1px;
+                        height: 24px;
+                    }
+                }
+            }
+        }
+        .search-result-items {
+            width: 100%;
+            padding-top: 45px;
+            .item-list {
+                display: flex;
+                width: 100%;
+                flex-wrap: wrap;
+                .item {
+                    width: 50%;
+                    border-bottom: 1px solid #f1eef2;
+                    .item--img-area {
+                        width: auto;
+                        .item--img-area picture {
+                            width: 100%;
+                            height: 100%;
+                            display: inline-flex;
+                        }
+                    }
+                    .item--content-area {
+                        max-width: 350px;
+                    }
+                }
+            }
+        } 
+    }
+}
+
+.scroll-to-top-area {
+    opacity: 0;
+    cursor: pointer;
+    z-index: 12;
+    bottom: 30px;
+    display: block;
+    width: 41px;
+    height: 50px;
+    position: fixed;
+    right: 25px;
+    -webkit-transition: opacity .15s;
+    -o-transition: opacity .15s;
+    transition: opacity .15s;
+    background: black;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    color: white;
+    font-size: 20px;
+    -webkit-transition: all 0.3s linear;
+    -o-transition: all 0.3s ease;
+    -webkit-transition: all 0.2s ease;
+    -o-transition: all 0.2s ease;
+    transition: all 0.2s ease;
+    border-radius: 5px;
+    &:hover {
+        background: #000000b0;
+        padding-bottom: 10px;
+        -webkit-transition: all 0.3s linear;
+        -o-transition: all 0.3s ease;
+        -webkit-transition: all 0.3s ease;
+        transition: all 0.3s ease;
+    }
+    img {
+        width: 20px;
+        max-width: 100%;
+    }
+}
+
+
+@media (min-width: 320px) and (max-width: 1024px) {
+    body {
+        padding: 0;
+    }
+
+    main {
+        section.omdb-app__list--area {
+            .search-result-items {
+                padding-top: 0;
+
+                .item-list {
+                    .item {
+                        flex-direction: column;
+                        padding-left: 0;
+                        padding-right: 50px;
+                        height: 100%;
+                        width: 50%;
+
+                        &:nth-child(2n) {
+                            padding-right: 0;
+                        }
+
+                        .item--img-area {
+                            width: 100%;
+                            height: 600px;
+
+                            picture {
+                                width: 100%;
+                                height: 100%;
+                                display: flex;
+
+                                img {
+                                    width: 100%;
+                                    height: auto;
+                                    object-fit: contain;
+                                }
+                            }
+                        }
+
+                        .item--content-area {
+                            padding: 0;
+                            padding-top: 30px;
+                            width: 100%;
+                            max-width: 100%;
+
+                            .item--specific-info-area {
+                                padding-bottom: 20px;
+                            }
+                        }
+                    }
+                }
+            }
+
+            .search-result-area {
+                height: 80px !important;
+
+                .search-key-count-key-area {
+                    h1 {
+                        font-size: 25px !important;
+                    }
+                }
+            }
+
+            .result-items-area {
+                width: 100%;
+            }
+
+            padding: 30px;
+        }
+    }
+
+}

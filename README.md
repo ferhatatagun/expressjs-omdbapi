@@ -18,3 +18,7 @@ The application includes data from the api and json data provided by OMDB and th
 4. Open the directory you just created to see your repository’s files.
 
  
+Info
+
+@ferhatatagun
+ferhatatagun2@gmail.com

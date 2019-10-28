@@ -1,0 +1,47 @@
+<section class="omdb-app__search--area">
+    <div class="item-list">
+        <div class="search-area">
+            <form data-js="search">
+                <input data-js="search-input" type="text" placeholder="Bulmak istediginiz filmin adını yazınız">
+                <div class="search-button-area">
+                    <button data-js="search-btn">
+                </div>
+            </form>
+        </div>
+        <div class="search-result">
+            <div class="search-result-area d-none" data-js="item-list-area">
+                <div class="item d-none">
+                    <div class="item--img-area" data-item-bind="item-img" >
+                        <picture>
+                            <source media="(min-width: 650px)" srcset="/loading.gif">
+                            <source media="(min-width: 465px)" srcset="/loading.gif">
+                            <img src="/loading.gif" alt="">
+                        </picture>
+                    </div>
+                    <div class="item--content-area">
+                        <div class="item--name-star-count-area">
+                            <h2 data-item-bind="item-name"  class="item--name">The TRON: Legacy (2010) </h2>
+                            <div class="item--star-count">
+                                <img src="/item-star.png">
+                                <div data-item-bind="item-imdb-point"  class="star-count">6.8
+                                    <span data-item-bind="item-imdb-level" class="start-count-level"> /10 </span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item--specific-info-area" data-item-bind="item-description">
+                            Dil: İngilizce
+                            Oyuncular: Jeff Bridges, Garrett Hedlund, Olivia Wilde |
+                            <a data-item-bind="item-url" href="">Tüm listeyi gör »</a>
+                        </div>
+                        <div class="item--description-area" data-item-bind="item-description2">
+                            Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod
+                            tincidunt ut
+                            laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad…
+                            <a data-item-bind="item-url" href="">Detaylar »</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

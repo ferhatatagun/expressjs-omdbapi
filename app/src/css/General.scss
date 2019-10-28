@@ -1,0 +1,360 @@
+@import "../css/page/variable.scss";
+@import "../css/page/list-area.scss";
+@import "../css/page/search-area.scss";
+@import "../font/font.scss";
+
+:root {
+    --blue: #007bff;
+    --indigo: #6610f2;
+    --purple: #6f42c1;
+    --pink: #e83e8c;
+    --red: #d03a3a;
+    --orange: #fd7e14;
+    --yellow: #ffc107;
+    --green: #24B26D;
+    --teal: #20c997;
+    --cyan: #17a2b8;
+    --white: #fff;
+    --gray: #6c757d;
+    --gray-dark: #343a40;
+    --primary: #007bff;
+    --secondary: #6c757d;
+    --success: #24B26D;
+    --info: #17a2b8;
+    --warning: #ffc107;
+    --danger: #d03a3a;
+    --light: #f8f9fa;
+    --dark: #343a40;
+    --breakpoint-xs: 0;
+    --breakpoint-sm: 576px;
+    --breakpoint-md: 768px;
+    --breakpoint-lg: 1024px;
+    --breakpoint-xl: 1440px;
+    --font-family-sans-serif: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    --font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html {
+    font-family: sans-serif;
+    line-height: 1.15;
+    -webkit-text-size-adjust: 100%;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+article,
+aside,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+main,
+nav,
+section {
+    display: block;
+}
+
+body {
+    margin: 0;
+    padding: 50px;
+    font-family: "Maax", Arial, Helvetica, sans-serif;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #212529;
+    text-align: left;
+    background-color: #fff;
+}
+
+[tabindex="-1"]:focus {
+    outline: 0 !important;
+}
+
+hr {
+    box-sizing: content-box;
+    height: 0;
+    overflow: visible;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+}
+
+p {
+    margin-top: 0;
+    margin-bottom: 1rem;
+}
+
+ol,
+ul,
+dl {
+    margin-top: 0;
+    margin-bottom: 1rem;
+}
+
+ol ol,
+ul ul,
+ol ul,
+ul ol {
+    margin-bottom: 0;
+}
+
+dt {
+    font-weight: 700;
+}
+
+dd {
+    margin-bottom: 0.5rem;
+    margin-left: 0;
+}
+
+blockquote {
+    margin: 0 0 1rem;
+}
+
+b,
+strong {
+    font-weight: bolder;
+}
+
+small {
+    font-size: 80%;
+}
+
+sub,
+sup {
+    position: relative;
+    font-size: 75%;
+    line-height: 0;
+    vertical-align: baseline;
+}
+
+sub {
+    bottom: -0.25em;
+}
+
+sup {
+    top: -0.5em;
+}
+
+
+a {
+    text-decoration: underline;
+    text-underline-position: under;
+    transition: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    color: black;
+    cursor: pointer;
+
+    &:hover {
+        opacity: 0.8;
+        text-decoration: none;
+    }
+}
+
+
+a:not([href]):not([tabindex]) {
+    color: inherit;
+    text-decoration: none;
+}
+
+a:not([href]):not([tabindex]):hover,
+a:not([href]):not([tabindex]):focus {
+    color: inherit;
+    text-decoration: none;
+}
+
+a:not([href]):not([tabindex]):focus {
+    outline: 0;
+}
+
+pre,
+code,
+kbd,
+samp {
+    font-family: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+    font-size: 1em;
+}
+
+pre {
+    margin-top: 0;
+    margin-bottom: 1rem;
+    overflow: auto;
+}
+
+figure {
+    margin: 0 0 1rem;
+}
+
+img {
+    width: 100%;
+    vertical-align: middle;
+    border-style: none;
+}
+
+// Result Item ##start
+.item {
+    display: flex;
+    height: 100%;
+    width: 100%;
+    flex-wrap: nowrap;
+    padding: 30px 0;
+    border-bottom: 1px solid #f1eef2;
+
+    &:last-child {
+        border: none;
+    }
+
+    .item--img-area {
+        width: 100%;
+        height: 250px;
+
+        img {
+            width: auto;
+            height: 250px;
+
+            &.pad100 {
+                padding: 100px;
+            }
+        }
+    }
+
+    .item--content-area {
+        display: flex;
+        flex-direction: column;
+        width: auto;
+        padding-left: 30px;
+        align-content: space-between;
+        height: auto;
+        justify-content: space-between;
+
+        .item--name-star-count-area {
+            display: flex;
+            flex-direction: column;
+            font-family: Maax;
+            font-size: 18px;
+            font-weight: normal;
+            font-stretch: normal;
+            font-style: normal;
+            letter-spacing: normal;
+            text-align: left;
+            color: #000000;
+
+            .item--name {
+                font-weight: bold;
+                margin: 0;
+                font-size: 18px;
+                line-height: 1;
+                padding-bottom: 5px;
+            }
+
+            .item--star-count {
+                position: relative;
+                display: flex;
+                flex-wrap: wrap;
+                align-items: center;
+                align-content: center;
+                height: 100%;
+                width: 100%;
+
+                img {
+                    width: 13px;
+                    max-width: 100%;
+                    height: auto;
+                    top: -2px;
+                    position: relative;
+                }
+
+                .star-count {
+                    color: #5883ff;
+                    display: flex;
+                    align-items: baseline;
+
+                    .start-count-level {
+                        font-size: 11px;
+                        color: #9b9b9b;
+                    }
+                }
+            }
+        }
+
+        .item--specific-info-area {
+            font-family: Maax;
+            font-size: 14px;
+            font-weight: normal;
+            font-stretch: normal;
+            font-style: normal;
+            line-height: 1.21;
+            letter-spacing: normal;
+            text-align: left;
+            color: #000000;
+        }
+
+        .item--description-area {
+            font-family: Maax;
+            font-size: 14px;
+            font-weight: normal;
+            font-stretch: normal;
+            font-style: normal;
+            line-height: 1.21;
+            letter-spacing: normal;
+            text-align: left;
+            color: #000000;
+            padding-bottom: 10px;
+
+            a {
+                margin-top: 10px;
+                position: relative;
+                display: block;
+            }
+        }
+    }
+}
+
+div#main-loading {
+    position: absolute;
+    width: 100%;
+    height: auto;
+    padding: 20px;
+    background: white;
+    top: 0;
+
+    .loading-container {
+        padding: 200px;
+    }
+}
+
+.d-none {
+    display: none;
+}
+
+.red {
+    color: red;
+}
+
+
+// Result Item ##end
+
+@media print {
+    body {
+        width: 100%;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {}
+
+@media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {}
+
+@media (min-width: 481px) and (max-width: 767px) {}
+

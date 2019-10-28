@@ -1,0 +1,284 @@
+main {
+    background-color: $background_color_1;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    align-self: center;
+
+    section.omdb-app__search--area {
+        width: 100%;
+        height: 100vh;
+        background-color: #f7f9fd;
+        display: flex;
+        justify-content: center;
+        align-content: center;
+        align-self: center;
+        flex-wrap: wrap;
+        overflow: hidden;
+
+        input[type="text"] {
+            border: solid 1px #f1eef2;
+            background-color: #ffffff;
+            padding-left: 20px;
+            font-family: Maax;
+            font-size: 18px;
+            font-weight: normal;
+            font-stretch: normal;
+            font-style: normal;
+            line-height: 1.19;
+            letter-spacing: normal;
+            text-align: left;
+            color: #000000;
+            z-index: 1;
+            border-bottom: solid 1px #5883ff;
+            border-width: 2px;
+            padding: 0;
+            margin: 0;
+            border-top-right-radius: 15px;
+            border-top-left-radius: 15px;
+
+            &::placeholder {
+                padding-left: 0px;
+            }
+        } 
+
+        .search-area {
+            position: relative;
+           
+        }
+
+        &.active {
+            .item-list {
+                .search-button-area button {
+                    background: url(/arrow-right.png);
+                    width: 40px;
+                    height: 30px;
+                }
+            }
+        }
+
+        &.with-search-result {
+            align-items: flex-start;
+            align-self: self-start;
+            position: relative;
+            height: 100vh;
+            width: 570px;
+            margin: auto;
+            .search-result {
+                .search-result-area {
+                    padding: 0 30px;
+                    width: 100%;
+                    height: auto;
+                    align-items: center;
+                    justify-content: center;
+                    display: flex;
+                    flex-direction: column;
+                    position: relative;
+                    min-height: 200px;
+                    &:before {
+                        content: "";
+                        border-style: solid;
+                        border-width: 0 16.5px 27px 16.5px;
+                        border-color: $border_color_1;
+                        top: -25px;
+                        position: absolute;
+                        left: 30px;
+                        box-sizing: content-box;
+                        background: #00000003;
+                        z-index: 2;
+                    }
+                }
+            }
+            .item-list {
+                position: absolute;
+                top: 30px;
+                height: auto;
+
+                .search-area {
+                    position: relative;
+                    width: 100%;
+                    justify-content: center;
+                }
+
+                .search-result {
+                    display: flex;
+                    align-items: center;
+                    width: 100%;
+                    justify-content: center;
+                    height: auto;
+                    position: relative;
+                    top: 13px;
+                    flex-direction: column;
+                }
+            } 
+            
+        }
+
+        .item-list {
+            align-self: center;
+            width: 100%;
+            justify-content: center;
+            align-items: center;
+            display: flex;
+            height: 100vh;
+            flex-direction: column;
+
+            input[type="text"] {
+                width: 570px;
+                height: 55px;
+                padding-left: 20px;
+                padding-right: 70px;
+            }
+
+            .search-button-area {
+                display: flex;
+                align-items: center;
+                height: 100%;
+                position: absolute;
+                right: 0;
+                top: 0;
+                padding-right: 35px;
+                z-index: 1;
+                cursor: pointer;
+
+                button {
+                    width: 30px;
+                    height: 30px;
+                    background-color: #5883ff;
+                    font-size: 0;
+                    background: url(/search-btn-icon.png);
+                    border: none;
+                    display: flex;
+                    background-repeat: no-repeat;
+                    padding: 0;
+                    cursor: pointer;
+                    z-index: 2;
+                }
+            }
+        }
+
+        .search-result {
+            .search-result-area {
+                width: 570px;
+                height: 694px;
+                border-radius: 10px;
+                box-shadow: 0 2px 10px 0 rgba(88, 131, 255, 0.1);
+                border: solid 1px #f1eef2;
+                background-color: #ffffff;
+            }
+
+            .load-more-area {
+                width: 100%;
+                height: 65px;
+                display: flex;
+                align-items: center;
+                justify-items: center;
+                border-top: 1px solid #e4d9e8;
+
+                .load-more-btn {
+                    font-family: Maax;
+                    font-size: 14px;
+                    font-weight: 500;
+                    font-stretch: normal;
+                    font-style: normal;
+                    line-height: 1.21;
+                    letter-spacing: normal;
+                    color: #5883ff;
+                    width: 100%;
+                    text-decoration: none;
+                    text-align: center;
+                }
+            }
+        }
+    }
+}
+
+@media (min-width: 320px) and (max-width: 1024px) {    
+    main {
+        section.omdb-app__search--area {
+            .item-list {
+                height: auto;
+
+                input[type="text"] {
+                    width: 100%;
+                    height: 75px;
+                    &::placeholder {
+                        font-size: 25px;
+                    }
+                }
+
+                .search-button-area {
+                    padding-right: 70px;
+                }
+            }
+
+            height: auto;
+            width: 100%;
+            padding: 0;
+
+            .search-area {
+                width: 100%;
+            }
+        }
+    }
+}
+
+
+@media (min-width: 320px) and (max-width: 768px) {
+    section.omdb-app__search--area.with-search-result.active {
+        width: 100%;
+    }
+    main {
+        section.omdb-app__search--area.with-search-result {
+            .search-result {
+                .search-result-area {
+                    width: 100%;
+                    float: left;
+                    display: flex;
+                    height: 100%;
+                    flex-direction: column;
+                }
+                .item--img-area {
+                    picture {
+                        width: 100%;
+                        height: auto;
+                        display: flex;
+                        img {
+                            width: 100%;
+                            height: auto;
+                            object-fit: cover;
+                            padding: 100px;
+                        }
+                    }
+                }
+                .item {
+                    flex-direction: column;
+                    float: left;
+                    align-items: center;
+                    align-self: center;
+                    justify-content: center;
+                    flex-wrap: wrap;
+                    .item--img-area {
+                        margin-bottom: 30px;
+                        height: auto;
+                        display: flex;
+                        align-items: center;
+                        align-self: center;
+                        justify-content: center;
+                    }
+                    h2.item--name {
+                        font-size: 24px;
+                    }
+                    .item--specific-info-area {
+                        font-size: 20px;
+                        padding-bottom: 20px;
+                        padding-top: 20px;
+                    }
+                    .item--description-area {
+                        font-size: 20px;
+                    }
+                }
+            }
+        }
+    }
+}
