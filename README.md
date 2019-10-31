@@ -10,7 +10,7 @@ The application includes data from the api and json data provided by OMDB and th
 
 > npm test / npm run test
 
---- optional (development mode & production mode(default))<br>
+--- optional (development mode & production mode(default))
 
 
 ## Clone a repository
