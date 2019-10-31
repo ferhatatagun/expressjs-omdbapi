@@ -4,10 +4,13 @@ The application includes data from the api and json data provided by OMDB and th
 ---
 
 ## Running the Project
-> npm install
+> npm install  
+
 > webpack 
+
 > npm test / npm run test
---- optional (development mode & production mode(default))
+
+--- optional (development mode & production mode(default))<br>
 
 
 ## Clone a repository
