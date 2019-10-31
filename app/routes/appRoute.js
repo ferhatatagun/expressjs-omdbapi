@@ -20,9 +20,8 @@ router.get('/list', function(req, res) {
     const html = fetch(queryString)
     .then(res => res.json().then(data => data.Search))
     .then(parsedData => {
-        if (parsedData != undefined) {
-            parsedData.forEach(movie => {
-                
+        
+            parsedData.forEach(movie => { 
                 if (parsedData !== undefined) {
                     res.render('pages/list', {
                         pageData: parsedData,
@@ -32,7 +31,7 @@ router.get('/list', function(req, res) {
                     res.render('pages/list');
                 }
             });
-        }
+        
     }); 
     
 });
