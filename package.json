@@ -14,9 +14,12 @@
     "url": "git+https://bitbucket.org/ferhatatagun/omdbapi/"
   },
   "keywords": [
-    "omdbapi"
+    "api",
+    "omdbapi",
+    "expressj",
+    "sass"
   ],
-  "author": "FerhatAtagun",
+  "author": "ferhatatagun",
   "license": "ISC",
   "homepage": "https://bitbucket.org/ferhatatagun/omdbapi/#readme",
   "dependencies": {
